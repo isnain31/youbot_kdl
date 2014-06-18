@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
 )
 find_package(orocos_kdl REQUIRED)
+find_package(kdl_parser REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -117,23 +118,23 @@ add_executable(iksolver src/ikSolver.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(youbot_kdl_node
-   ${catkin_LIBRARIES} youbot_kdl orocos-kdl YouBotDriver
+   ${catkin_LIBRARIES} youbot_kdl ${kdl_parser_LIBRARIES}   ${orocos_kdl_LIBRARIES} YouBotDriver
  )
 
 target_link_libraries(joint_params
-  ${catkin_LIBRARIES} youbot_kdl orocos-kdl YouBotDriver
+  ${catkin_LIBRARIES} youbot_kdl ${kdl_parser_LIBRARIES}   ${orocos_kdl_LIBRARIES} YouBotDriver
 )
 
 target_link_libraries(velocity_model
-  ${catkin_LIBRARIES} youbot_kdl orocos-kdl YouBotDriver
+  ${catkin_LIBRARIES} youbot_kdl ${kdl_parser_LIBRARIES}   ${orocos_kdl_LIBRARIES} YouBotDriver
 )
 
  target_link_libraries(fksolver
-   ${catkin_LIBRARIES} youbot_kdl orocos-kdl YouBotDriver
+   ${catkin_LIBRARIES} youbot_kdl ${kdl_parser_LIBRARIES}   ${orocos_kdl_LIBRARIES} YouBotDriver
  )
 
  target_link_libraries(iksolver
-   ${catkin_LIBRARIES} youbot_kdl orocos-kdl YouBotDriver
+   ${catkin_LIBRARIES} youbot_kdl ${kdl_parser_LIBRARIES}   ${orocos_kdl_LIBRARIES} YouBotDriver
  )
 
 #############
