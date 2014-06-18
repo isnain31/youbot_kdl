@@ -1,0 +1,11 @@
+#include <iostream>
+#include "youbot_kdl/KDLInterface.h"
+
+int main ()
+{
+	//HardwareEncapsulation::KDLInterface *interface = new HardwareEncapsulation::KDLInterface();
+	//KDL::JntArray armpostions(5);
+	interface->GetArmParameters();
+	
+	return 0;
+}
